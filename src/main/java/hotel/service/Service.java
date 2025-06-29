@@ -20,7 +20,7 @@ public class Service {
         nextBookingId = 1;
     }
 
-    void setRoom(int roomNumber, RoomType roomType, int roomPricePerNight) {
+    public void setRoom(int roomNumber, RoomType roomType, int roomPricePerNight) {
         try {
             if (roomPricePerNight <= 0) {
                 throw new IllegalArgumentException("Room price must be positive");
@@ -41,7 +41,7 @@ public class Service {
         }
     }
 
-    void setUser(int userId, int balance) {
+    public void setUser(int userId, int balance) {
         try {
             if (balance < 0) {
                 throw new IllegalArgumentException("Balance cannot be negative");
@@ -61,7 +61,7 @@ public class Service {
         }
     }
 
-    void bookRoom(int userId, int roomNumber, Date checkIn, Date checkOut) {
+    public void bookRoom(int userId, int roomNumber, Date checkIn, Date checkOut) {
         try {
             if (checkIn.after(checkOut) || checkIn.equals(checkOut)) {
                 System.err.println("Invalid dates: Check-in must be before check-out");
@@ -118,7 +118,7 @@ public class Service {
         return true;
     }
 
-    void printAll() {
+    public void printAll() {
         System.out.println("\n=== ALL ROOMS (Latest to Oldest) ===");
         List<Room> reversedRooms = new ArrayList<>(rooms);
         Collections.reverse(reversedRooms);
@@ -134,7 +134,7 @@ public class Service {
         }
     }
 
-    void printAllUsers() {
+    public void printAllUsers() {
         System.out.println("\n=== ALL USERS (Latest to Oldest) ===");
         List<User> reversedUsers = new ArrayList<>(users);
         Collections.reverse(reversedUsers);
