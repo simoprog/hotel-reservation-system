@@ -2,7 +2,7 @@ package hotel.entities;
 
 import hotel.enums.RoomType;
 
-class Room {
+public class Room {
     private int roomNumber;
     private RoomType roomType;
     private int pricePerNight;
